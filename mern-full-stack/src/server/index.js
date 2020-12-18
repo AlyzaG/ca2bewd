@@ -12,7 +12,6 @@ server.use(express.static('dist'));
 
 // the URL to the DB will be loaded from an env variable or using the MongoDB Clour
 const dbroute = process.env.MONGODB_URL || `mongodb+srv://userdb:jcJd7YgFirQ2CW6@dbshows.ulzym.mongodb.net/library?retryWrites=true&w=majority`;
-//const dbroute = process.env.MONGODB_URL || `mongodb+srv://erika:dorset@users-bm6td.mongodb.net/test?retryWrites=true&w=majority`;
 
 let db;
 
@@ -22,7 +21,7 @@ MongoClient.connect(dbroute, (err, client) => {
 
   db = client.db(dbname);
   // start the express web server listening
-  server.listen(process.env.PORT || 8080, () => console.log(`Listening on port ${process.env.PORT || 3000}!`));
+  server.listen(process.env.PORT || 3000, () => console.log(`Listening on port ${process.env.PORT || 3000}!`));
 })
 
 // bodyParser, parses the request body to be a readable json format

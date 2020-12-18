@@ -15,6 +15,7 @@
   "dependencies": {
     "axios": "^0.19.2",
     "babel-polyfill": "^6.26.0",
+    "body-parser": "latest",
     "bulma": "^0.8.2",
     "express": "^4.17.1",
     "kill-port": "^1.6.0",
@@ -23,8 +24,7 @@
     "react": "^16.13.1",
     "react-dom": "^16.13.1",
     "react-router-dom": "^5.1.2",
-    "webpack": "^4.42.1",
-    "body-parser": "latest"
+    "webpack": "^4.42.1"
   },
   "devDependencies": {
     "@babel/core": "^7.9.0",

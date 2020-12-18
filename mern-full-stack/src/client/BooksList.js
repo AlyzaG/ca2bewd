@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
+import ReactDOM from 'react-dom';
 import Books from "./Books";
 import Navbar from "./Navbar";
 import axios from 'axios';
@@ -42,12 +43,12 @@ class BooksList extends Component {
             });
     }
 
-    handleDelete(bookId) {
+    handleDelete(booksId) {
         // make a DELETE request to the server which will handle the removal of the user with the specific userId
         axios
             .delete('api/books', {
                 data: {
-                    id: bookId
+                    id: booksId
                 }
             })
             .then(response => {
@@ -61,9 +62,9 @@ class BooksList extends Component {
 
     render() {
         // produce a Book component for each user object
-        const bookList = this.state.books.map(u => (
+        const booksList = this.state.books.map(u => (
             //map through each element in the array and set to the value received from the server
-            <Book
+            <Books
                 key={u._id}
                 id={u._id}
                 title={u.title}
@@ -99,7 +100,7 @@ class BooksList extends Component {
                 {/*USER LIST*/}
                 <div>
                     <div className="columns is-multiline">
-                        {bookList}
+                        {booksList}
                     </div>
                 </div>
                 {/*FOOTER*/}
@@ -107,7 +108,7 @@ class BooksList extends Component {
                 <footer className="footer has-background-primary">
                     <div className="content has-text-centered">
                         <p>
-                            <strong>Random Book API</strong> by <a href="https://github.com/lutiku">Lutiku</a>. Styled with
+                            <strong>Random Book API</strong>. Styled with
                             <a href="https://bulma.io/">Bulma</a>.
                         </p>
                     </div>

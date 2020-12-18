@@ -1,6 +1,6 @@
 import React from 'react';
-import 'bulma/css/bulma.css'
 import ReactDOM from 'react-dom';
+import 'bulma/css/bulma.css'
 //import the Link component to use for linking prop information
 import { Link } from 'react-router-dom';
 

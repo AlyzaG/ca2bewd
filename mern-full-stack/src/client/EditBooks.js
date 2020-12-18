@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import ReactDOM from 'react-dom';
 import 'bulma/css/bulma.css'
 import axios from 'axios';
 import { Link } from 'react-router-dom';

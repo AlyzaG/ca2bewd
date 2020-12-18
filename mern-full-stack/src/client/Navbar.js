@@ -1,10 +1,10 @@
 import {Link} from "react-router-dom";
+import ReactDOM from 'react-dom';
 import React, { Component } from 'react';
 import './app.css';
 import 'bulma/css/bulma.css';
-import BooksList from "./BooksList";
 
-class Navbar extends Component {
+class navbar extends Component {
     render() {
         return(
             <navbar>
@@ -30,4 +30,4 @@ class Navbar extends Component {
     }
 }
 
-export default Navbar;
+export default navbar;

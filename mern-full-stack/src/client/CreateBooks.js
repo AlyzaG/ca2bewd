@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import ReactDOM from 'react-dom';
 import axios from 'axios';
 import './app.css';
 import Navbar from "./Navbar";
@@ -53,8 +54,9 @@ class CreateBooks extends Component {
         return (
             <div className="is-fluid">
                 {/*on form submit call handleSubmit()*/}
+                <Navbar />
                 <form onSubmit={this.handleSubmit}>
-                    <h2 className="title is-1 has-text-primary">Create New Book</h2>
+                    <h2 className="title is-1 has-text-black">Insert new Books</h2>
                     <hr />
                     {/*main container for input fields*/}
                     <div className="container">
@@ -74,7 +76,7 @@ class CreateBooks extends Component {
                                     </div>
                                 </div>
                                 <div className="field">
-                                    <label className="label"> Book Picture: </label>
+                                    <label className="label"> Book Cover: </label>
                                     <div className="control">
 
                                         <input className="input is-small" type="file" name="picture" value={this.state.picture} onChange={this.handleChange} id="form" />
@@ -98,7 +100,7 @@ class CreateBooks extends Component {
                             </div>
                         </div>
                         {/*SUBMIT BUTTON*/}
-                        <input className="button is-primary" type="submit" value="Submit" />
+                        <input className="button is-link" type="submit" value="Submit" />
                     </div>
                 </form>
             </div>
