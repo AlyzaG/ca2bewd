@@ -1,0 +1,29 @@
+#form{
+    width: 500px;
+}
+/* NAVBAR */
+
+.navbar-title{
+    padding-top: 30px;
+    padding-left: 50px;
+    font-size: large;
+}
+/* BOOKS LIST*/
+
+.is-fluid{
+    height: 100vh;
+}
+hr{
+    color: black;
+}
+a{
+    color: black;
+}
+footer{
+}
+
+/* CREATE BOOKS */
+
+form{
+    padding: 60px;
+}
