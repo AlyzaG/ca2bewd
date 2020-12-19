@@ -19,76 +19,76 @@ npm install
 # run your development server
 npm run dev
 ```
- 
-##  :clap:To deploy your app on Heroku
-Heroku is one of the popular hosting platforms to deploy your application. It's free, quick and supports several programming languages.
 
-##### To deploy your application
+# Description
 
-###### Make sure you prepare your poroject for production
-```linux
-# build for production
-npm run build
+The application allows user to insert their favorite book, they can later delete it or edit it of needed.
+The application is using a database with mongoDB and Node.js to use all the crud methods (create, read, update, delete) to interact with the data stored in the database, and React to create a front-end.
 
-# start production server
-npm start
+
+# Requirements
+
 ```
----
+npm install axios
+```
+Axios provides support for request and response interceptors, transformers and auto-conversion to JSON
+```
+npm install bulma
+```
+Enables to use Bulma, a framework to design the application
+```
+const express = require('express');
+```
+This is using the 'Express' module from the package installed
+```
+const {MongoClient, ObjectId} = require('mongodb');
+```
+Require the database using MongoClient for the connection, and require ObjectId to use it later on the code.
 
-Detailed instructions can be found [HERE](https://devcenter.heroku.com/articles/heroku-cli).
+## Usage
 
-1. Create an account at [Heroku](http://heroku.com/) and login
-2. Then do the following inside your Gitpod terminal...
+Set a variable to load the database
+```
+const dbroute = process.env.MONGODB_URL || `mongodb+srv://userdb:jcJd7YgFirQ2CW6@dbshows.ulzym.mongodb.net/library?retryWrites=true&w=majority`;
 
-###### 1. Install Heroku CLl
-```linux
-npm install -g heroku
+let db;
+```
+Connection to the database, using a condition to check if an error occur, define the port
+```
+MongoClient.connect(dbroute, (err, client) => {
+  if (err) throw err;
+
+  db = client.db(dbname);
+  server.listen(process.env.PORT || 3000, () => console.log(`Listening on port ${process.env.PORT || 3000}!`));
+})
+```
+This class render the Homepage of the application, it renders the navigation bar and return the array of books.
+A button is set to insert a new book.
+```
+class BooksList extends Component
+```
+This class render the navigation bar, this would be imported on the file BooksList.js and CreateBooks.js
+```
+class navbar extends Component
+```
+This class render a form to insert a book into the database. HandleSubmit is an event to send all entries into the database. HandleChange is an event to match the values of the entries.
+```
+class CreateBooks extends Component
+```
+This class, just like in CreateBooks.js render a form, however this one enables the user to edit their entries, using the same event.
+componentDidMount is function to retrieve the data that will be edited by the user.
+```
+class CreateBooks extends Component
+```
+This file define the root to render all pages on the browser.
+```
+App.js
 ```
 
-###### 2. Verify CLI installation
-```linux
-heroku --version
-```
+## Problem encountered
 
-Once CLl is installed you should be able to run ```heroku```commands.
+Throughout my work I had several errors stating that my port was already used, when it was not. Then I had some more errors and killed the port and run it again, after struggling few days I managed to fix it.
+I was able to perform a CRUD and render it on my homepage.
 
-###### 3. Login to your Heroku account in the terminal
-```linux
-heroku login
-```
-NOTE: make sure you are in the root folder eg. my-react-app in this example its mern-full-stack
-
-###### 4. Create a new Heroku app
-```linux
-heroku create
-```
-This command will create your Heroku app and it should appear in your dashboard.
-
-![alt text](https://i.ibb.co/6yhGHJw/1506430728-Screen-Shot-2017-09-18-at-12-00-52-1.png "Heroku apps")
-
-###### 5. Initiliase Git repository
-```linux
-git init
-```
-###### 6. Add your project (run these commands line by line
-```linux
-git add .
-git commit -am 'commit'
-```
-
-###### 7. Get the Heroku app's repository 
-```linux
-heroku git:remote -a young-everglades-29265
-```
-NOTE: You can get this link by clicking on the app in your Heroku dashboard and selecting it. Then select "Deploy" and go down to find
-this line of code. replace ```clone```to ```remote```. It should look like this:
-
-![alt text](https://i.ibb.co/GnZZHPL/Capture.png "Heroku repository")
-
-###### 8. Push your project and run post build script
-```linux
-git push heroku master
-```
----
-
-####  If nothing goes wrong, congradulations! You've just deployed your application onto Heroku :raised_hands: :star2:
+## Authors
+Alyza Gumma Saad 

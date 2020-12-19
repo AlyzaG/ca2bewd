@@ -61,7 +61,7 @@ class BooksList extends Component {
     }
 
     render() {
-        // produce a Book component for each user object
+        // produce a Books component for each user object
         const booksList = this.state.books.map(u => (
             //map through each element in the array and set to the value received from the server
             <Books
@@ -82,19 +82,7 @@ class BooksList extends Component {
             <div className="is-fluid">
                 {/*Navigation bar*/}
 
-                {/*
-                <nav className="navbar">
-                    <h1 className="navbar-item title is-1 has-text-primary">List of Books</h1>
-                    {/*when this button is pressed, CreateBook component will be rendered by using React Router*/}
-                {/* <Link to={'/create-book'} className="navbar-item navbar-end">
-                        <button className="button is-warning" type="button">Create new Book</button>
-                    </Link>
-                </nav>
-                */}
-                {/* Nouvelle Nav*/}
                 <Navbar/>
-
-
 
                 <hr />
                 {/*USER LIST*/}

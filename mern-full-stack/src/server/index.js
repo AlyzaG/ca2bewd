@@ -15,7 +15,7 @@ const dbroute = process.env.MONGODB_URL || `mongodb+srv://userdb:jcJd7YgFirQ2CW6
 
 let db;
 
-// connect to the DB and then start the expres server
+// connect to the DB and then start the express server
 MongoClient.connect(dbroute, (err, client) => {
   if (err) throw err;
 

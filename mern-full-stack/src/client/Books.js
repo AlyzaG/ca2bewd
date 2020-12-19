@@ -36,18 +36,19 @@ class Books extends React.Component {
                                     {/*delete the prop with requested id from the function invoked in the parent component*/}
                                 </div>
                             </div>
+                            {/*Footer*/}
                             <footer className="card-footer">
-                                <a className="card-footer-item">
-                                    <button className="button is-danger" type="button" onClick={() => {this.props.handleDelete(this.props.id);}}>
-                                        Delete
-                                    </button>
-                                </a>
-                                <a className="card-footer-item">
+                                <a href="#" className="card-footer-item">
                                     <Link to={`/edit-books/${this.props.id}`}>
                                         <button className="button is-primary" type="button">
                                             Edit
                                         </button>
                                     </Link>
+                                </a>
+                                <a href="#" className="card-footer-item">
+                                    <button className="button is-danger" type="button" onClick={() => {this.props.handleDelete(this.props.id);}}>
+                                        Delete
+                                    </button>
                                 </a>
                             </footer>
                         </div>
