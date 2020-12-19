@@ -37,8 +37,9 @@ class EditBooks extends Component {
                 this.setState({
                     _id: response.data._id,
                     title: response.data.title,
-                    year: response.data.year,
-                    author: response.data.author,
+                    first: response.data.first,
+                    lastName: response.data.lastName,
+                    quote: response.data.quote,
                     picture: response.data.picture,
                 });
             })

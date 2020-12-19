@@ -16,7 +16,7 @@ class navbar extends Component {
                     <div className="navbar-end">
                         <div className="navbar-item">
                             <div className="buttons">
-                                <Link to={'/create-books'} className="navbar-item navbar-end">
+                                <Link to={'/create-shows'} className="navbar-item navbar-end">
                                     <button className="button is-link" type="button">Create new user</button>
                                 </Link>
                             </div>

@@ -105,14 +105,7 @@ class BooksList extends Component {
                 </div>
                 {/*FOOTER*/}
 
-                <footer className="footer has-background-primary">
-                    <div className="content has-text-centered">
-                        <p>
-                            <strong>Random Book API</strong>. Styled with
-                            <a href="https://bulma.io/">Bulma</a>.
-                        </p>
-                    </div>
-                </footer>
+
             </div>
 
         );

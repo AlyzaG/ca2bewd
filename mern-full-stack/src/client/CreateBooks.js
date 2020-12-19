@@ -76,7 +76,7 @@ class CreateBooks extends Component {
                                     </div>
                                 </div>
                                 <div className="field">
-                                    <label className="label"> Book Cover: </label>
+                                    <label className="label"> Cover: </label>
                                     <div className="control">
 
                                         <input className="input is-small" type="file" name="picture" value={this.state.picture} onChange={this.handleChange} id="form" />
